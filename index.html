@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الشجرة الكسرية التفاعلية</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <h1>🌳 شجرة كسرية تفاعلية</h1>
+        <p>نمو ديناميكي، رياح لطيفة، وأوراق قابلة للتخصيص</p>
+      </header>
+
+      <main class="layout">
+        <aside class="panel">
+          <div class="control-group">
+            <label for="branchAngle">زاوية الفروع</label>
+            <input id="branchAngle" type="range" min="5" max="45" step="1" value="25" />
+            <span id="branchAngleValue" class="value">25°</span>
+          </div>
+
+          <div class="control-group">
+            <label for="depth">العمق</label>
+            <input id="depth" type="range" min="2" max="14" step="1" value="10" />
+            <span id="depthValue" class="value">10</span>
+          </div>
+
+          <div class="control-group">
+            <label for="length">طول الفرع</label>
+            <input id="length" type="range" min="30" max="150" step="5" value="100" />
+            <span id="lengthValue" class="value">100px</span>
+          </div>
+
+          <div class="control-group">
+            <label for="windForce">قوة الرياح</label>
+            <input id="windForce" type="range" min="0" max="2" step="0.1" value="0.7" />
+            <span id="windForceValue" class="value">0.70</span>
+          </div>
+
+          <div class="control-group">
+            <label for="lengthRatio">نسبة التقليل</label>
+            <input id="lengthRatio" type="range" min="0.5" max="0.9" step="0.05" value="0.75" />
+            <span id="lengthRatioValue" class="value">0.75</span>
+          </div>
+
+          <div class="checkbox-row">
+            <label for="showLeaves">
+              <input id="showLeaves" type="checkbox" checked />
+              أوراق مرئية
+            </label>
+          </div>
+
+          <div class="checkbox-row">
+            <label for="useBlueLeaves">
+              <input id="useBlueLeaves" type="checkbox" />
+              أوراق زرقاء
+            </label>
+          </div>
+
+          <div class="color-row">
+            <label for="branchColor">لون الفروع</label>
+            <input id="branchColor" type="color" value="#8b5a2b" />
+          </div>
+
+          <div class="color-row">
+            <label for="leafColor">لون الأوراق</label>
+            <input id="leafColor" type="color" value="#3fbf5f" />
+          </div>
+
+          <div class="color-row">
+            <label for="bgColor">لون الخلفية</label>
+            <input id="bgColor" type="color" value="#edf8ee" />
+          </div>
+
+          <button id="resetBtn" class="reset-btn">إعادة تفعيل</button>
+        </aside>
+
+        <section class="canvas-wrap">
+          <canvas id="treeCanvas" width="980" height="720"></canvas>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
